@@ -19,6 +19,7 @@ public class Border {
     drawRight();
     drawBottom();
   }
+
   private void drawCorners() {
     drawBorderSquare(0, 0);
     drawBorderSquare(board.getColumns() - 2, 0);

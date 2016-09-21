@@ -1,6 +1,9 @@
 package pl.dawidstepien.game;
 
+import java.util.Objects;
+
 import com.googlecode.lanterna.TerminalFacade;
+import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.swing.SwingTerminal;
 
@@ -38,5 +41,10 @@ public class Board {
 
   public int getRows() {
     return BOARD_ROWS;
+  }
+
+  public Key getCurrentKey() {
+    Key key = screen.readInput();
+    return Objects.isNull(key) ? new Key('`') : key;
   }
 }
