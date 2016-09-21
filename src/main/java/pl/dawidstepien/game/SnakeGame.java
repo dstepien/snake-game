@@ -25,7 +25,15 @@ public class SnakeGame {
   }
 
   private void drawSnake() {
-    snake.draw();
+    try{
+      snake.draw();
+    } catch (IllegalPositionException e){
+      reset();
+    }
+  }
+
+  private void reset(){
+    snake.reset();
   }
 
   private void drawBorder() {
@@ -47,8 +55,17 @@ public class SnakeGame {
     if(key.getKind().equals(Key.Kind.ArrowUp)) {
       snake.setDirection(SnakeDirection.UP);
     }
+    if(key.getKind().equals(Key.Kind.ArrowDown)) {
+      snake.setDirection(SnakeDirection.DOWN);
+    }
+    if(key.getKind().equals(Key.Kind.ArrowLeft)) {
+      snake.setDirection(SnakeDirection.LEFT);
+    }
+    if(key.getKind().equals(Key.Kind.ArrowRight)) {
+      snake.setDirection(SnakeDirection.RIGHT);
+    }
 
-    snake.draw();
+    drawSnake();
   }
 
   private void endGame() {
