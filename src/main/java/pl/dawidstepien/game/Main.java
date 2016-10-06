@@ -7,7 +7,7 @@ public class Main {
     game.start();
     while(game.isRunning()) {
       game.run();
-      Thread.sleep(500);
+      Thread.sleep(150);
     }
     game.stop();
   }
