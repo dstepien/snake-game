@@ -12,7 +12,7 @@ public class Snake {
 
   private Board board;
 
-  private int length = 5;
+  private int length = 1;
 
   private int x;
 
@@ -90,5 +90,18 @@ public class Snake {
       board.drawSquare(new Square(square.getX(), square.getY(), TRANSPARENT_COLOR));
     }
     parts.clear();
+    length = 1;
+  }
+
+  public Square getHead() {
+    return parts.get(parts.size() - 1);
+  }
+
+  public void addLength(){
+    length++;
+  }
+
+  public List<Square> getParts() {
+    return parts;
   }
 }
